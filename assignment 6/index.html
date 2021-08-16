@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <link href="http://fonts.cdnfonts.com/css/myriad-pro" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <title>Bootstrap</title>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+            </path>
+        </symbol>
+        <symbol id="facebook" viewBox="0 0 16 16">
+            <path
+                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+        </symbol>
+        <symbol id="instagram" viewBox="0 0 16 16">
+            <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+        </symbol>
+        <symbol id="twitter" viewBox="0 0 16 16">
+            <path
+                d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+        </symbol>
+    </svg>
+    <header>
+        <nav class=" bg-light">
+            <div class="container d-flex flex-row" style="background-color: rgba(0,180,143,255); min-width: 100vw; ">
+
+                <ul class="nav  ">
+                    <li class=" p-2 flex-fill nav-item "><a class="navbar-brand" href="https://www.infosys.com"
+                            title="Go to Infosys Home" aria-label="Go to Infosys Home"> <svg version="1.1"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                                y="0px" width="86px" height="32px" viewBox="0 309.9 595.3 224"
+                                enable-background="new 0 309.9 595.3 224" xml:space="preserve" class="logo">
+                                <path id="logo" fill="#fff"
+                                    d="M577.1,347.4c9.7,0,18.2-8,18.2-18.2c0-9.7-8-18.2-18.2-18.2c-9.7,0-18.2,8-18.2,18.2
+                                            	C559.4,339.4,567.4,347.4,577.1,347.4L577.1,347.4z M562.1,329.3c0-8.4,7.1-15.5,15.5-15.5c8.4,0,15.5,7.1,15.5,15.5
+                                            	c0,8.4-7.1,15.5-15.5,15.5C568.7,344.8,562.1,337.7,562.1,329.3L562.1,329.3z M570.5,338.6h3.5v-8h4l3.1,7.5h4l-3.5-8.4
+                                            	c1.3-0.4,3.1-1.3,3.1-4.9c0-5.3-4-6.2-7.5-6.2h-6.2v19.9H570.5z M574,322.6h4c2.2,0,3.1,0.9,3.1,2.7s-1.3,2.7-3.1,2.7h-4V322.6
+                                            	L574,322.6z M0,337.2L0,337.2V316h21.3v21.3l0,0v134.2v0.4v20.8H0v-21.3V471V337.2L0,337.2z M216.6,428.5
+                                            	c0.4,32.3,20.4,58,44.7,57.6c24.4-0.4,43.4-27,43-58.9c-0.4-32.3-20.4-58-44.7-57.6C235.2,370,216.1,396.1,216.6,428.5L216.6,428.5z
+                                            	 M392.9,389.5c0.4,1.3-0.9-1.8-0.9-1.8L392.9,389.5L392.9,389.5z M407.5,522.8c0.9-1.8,2.2-4,4-7.5L407.5,522.8L407.5,522.8z
+                                            	 M408.8,378.4c0.4,0.9,0.4,1.3,0.9,2.2l7.1,17.7L408.8,378.4L408.8,378.4z M319.3,467c13.3,12,24.8,18.2,40.3,18.2
+                                            	c15.5,0,29.2-7.5,29.2-22.1c0-12.4-10.6-19.5-30.1-27.5c-16.4-7.1-28.3-12-35-22.1c0.9,4.4,1.3,8.9,1.3,13.7
+                                            	c0,39.4-28.8,71.3-64.2,71.3s-64.2-31.9-64.2-71.3c0-23.9,10.6-44.7,26.6-58h-43.4v102.3v0.4v21.3h-19v-20.4c0-0.4,0-0.9,0-0.9
+                                            	V369.1h-16.8v-12.8h17.3c2.2-26.1,18.2-40.7,40.7-40.7c14.6,0,22.6,1.3,27,3.5v17.7c0,1.3,0,2.2,0,2.2h-0.9
+                                            	c-7.1-6.6-13.7-11.1-29.7-11.1c-12.8,0-21.3,10.2-18.2,28.3h72.2c3.1-0.4,6.2-0.9,9.3-0.9c25.7,0,47.8,16.8,58,41.2
+                                            	c0-1.3,0-2.7,0-4.4c0-25.2,24.8-36.3,50-36.3c0.9,0,1.8,0,2.7,0c8.9,0,21.7,2.7,29.7,4.9l7.1,17.3l8,19.9l21.3,53.1l2.7,8.4l2.7-8.4
+                                            	l27.5-67.8c4.9-18.6,25.2-26.6,46.9-26.6c11.1,0,19,1.3,28.8,4.9V382c-12-8.9-20.4-13.7-34.1-13.7c-12,0-26.1,5.3-26.1,23
+                                            	c-0.4,13.3,7.5,15.5,31,27c19,8.4,36.8,17.3,36.8,38.5c0,35.4-35,41.6-51.8,41.6c-15.1,0-29.2-3.5-36.8-10.2v-23.5l1.3,0.9
+                                            	c13.7,12.8,26.1,19.5,41.6,19.5s29.2-7.5,29.2-22.1c0-12.4-10.6-19.5-30.1-27.5c-18.6-8-30.6-13.3-35.4-26.6
+                                            	c-7.5,18.2-42.5,103.6-50.9,121.8h-18.6l4.4-8.4l4-7.5v-0.4c4.9-9.3,11.5-23.9,17.7-38.1l-36.3-87.7c-0.4-0.4-0.9-1.8-2.2-4.4
+                                            	c-2.7-6.2-5.3-12.4-13.3-15.1c-4-1.3-8.9-2.2-13.7-2.2c-12,0-27,5.3-27,23c-0.4,13.3,8.4,15.5,31.9,27c19,8.4,36.8,17.3,36.8,38.5
+                                            	c0,35.4-35,41.6-51.8,41.6c-13.3,0-26.1-3.1-34.1-8L319.3,467L319.3,467z M61.1,357.6l0.4,15.5v0.9l0,0c0.4-0.4,0.4-1.3,0.9-1.8
+                                            	c8-8.4,17.7-16.8,41.2-16.8c22.6,0,36.8,19,37.6,31V471v0.4v21.3h-19v-25.2v-72.2c0-15.1-13.3-25.7-29.2-25.7
+                                            	c-13.3,0-30.6,12-31,24.4v77.5v0.4v20.8H42.5v-21.3v-96.1v-17.7h3.5h10.6L61.1,357.6L61.1,357.6z">
+                                </path>
+                            </svg> </a></li>
+                    <li class=" p-2 flex-fill nav-item "><a href="#" class="nav-link link-dark ">Careers</a></li>
+                    <li class="p-2 flex-fill nav-item "><a href="#" class="nav-link link-dark ">Investors</a></li>
+                    <li class="p-2 flex-fill nav-item "><a href="#" class="nav-link link-dark ">Navigate your next</a>
+                    </li>
+                    <li class="p-2 flex-fill nav-item "><a href="#" class="nav-link link-dark ">Infosys knowledge
+                            institute</a>
+                    </li>
+                </ul>
+                <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </nav>
+    </header>
+    <div class="container mx-0 px-0" style="position: relative;">
+        <div class="box banner-1">
+            <article class="container-fluid mx-0 px-0">
+                <section id="hero-slider">
+
+                    <div class="container mx-0 px-0 ">
+                        <article class="container container-fluid mx-0 px-0 ">
+                            <img class="slide-image" src="./images/background-1.JPG" alt="">
+                            <h1 class="col-lg-6 col-md-6 col-sm-12 co-xs-12 caption">$414 Billion in Profits can be
+                                Gained
+                                Using Cloud for
+                                Business
+                                Growth:
+                                Infosys
+                                Research</h1>
+
+                        </article>
+                    </div>
+
+                </section>
+            </article>
+        </div>
+
+
+        <div class="box banner-1">
+            <article class="container-fluid mx-0 px-0">
+                <section id="hero-slider">
+
+                    <div class="container mx-0 px-0 ">
+                        <article class="container container-fluid mx-0 px-0 ">
+                            <img class="slide-image" src="./images/background-1.JPG" alt="">
+                            <h1 class="col-lg-6 col-md-6 col-sm-12 co-xs-12 caption">$414 Billion in Profits can be
+                                Gained
+                                Using Cloud for
+                                Business
+                                Growth:
+                                Infosys
+                                Research</h1>
+
+                        </article>
+                    </div>
+
+                </section>
+            </article>
+        </div>
+        <div class="box banner-1">
+            <article class="container-fluid mx-0 px-0">
+                <section id="hero-slider">
+
+                    <div class="container mx-0 px-0">
+                        <article class="container container-fluid mx-0 px-0"
+                            style="background-color:rgb(255, 238, 0); min-width: 100vw;">
+                            <img class="slide-image png-img" src="./images/digital-capabilities-lead-tab.webp" alt=""
+                                style="left:30%">
+                            <h1 class="col-lg-6 col-md-6 col-sm-12 co-xs-12 caption">$414 Billion in Profits can be
+                                Gained
+                                Using Cloud for
+                                Business
+                                Growth:
+                                Infosys
+                                Research</h1>
+
+                        </article>
+                    </div>
+
+                </section>
+            </article>
+        </div>
+
+        <div class="box banner-1">
+            <article class="container-fluid mx-0 px-0">
+                <section id="hero-slider">
+
+                    <div class="container mx-0 px-0">
+                        <article class="container container-fluid mx-0 px-0"
+                            style="background-color:rgb(238, 23, 220); min-width: 100vw;">
+                            <img class="slide-image " src="./images/talent-transformations-lead.webp" alt=""
+                                style="left:0">
+                            <h1 class="col-lg-6 col-md-6 col-sm-12 co-xs-12 caption">$414 Billion in Profits can be
+                                Gained
+                                Using Cloud for
+                                Business
+                                Growth:
+                                Infosys
+                                Research</h1>
+
+                        </article>
+                    </div>
+
+                </section>
+            </article>
+        </div>
+
+    </div>
+    <h1 class="text-center">The Next</h1>
+    <div class="row justify-content-center">
+        <h2 class="col-lg-6 col-md-8 col-sm-12 col-xs-12 text-center justify-content-center"
+            style="color: rgb(155, 161, 158);">We bring you powerful
+            advantages to navigate your digital transformation</h2>
+    </div>
+
+
+    <div class="container justify-content-center">
+        <div class="row justify-content-center">
+            <div class="expe" style="background-image: url(./images/experience.webp);">
+                <h2 style="padding-top: 80%;">Experience</h2>
+            </div>
+            <div class="expe" style="background-image: url(./images/innovate.webp);">
+                <h2 style="padding-top: 80%;">Innovate</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="expe" style="background-image: url(./images/insight.webp);">
+                <h2 style="padding-top: 80%;">Insight</h2>
+            </div>
+            <div class="expe" style="background-image: url(./images/accelerate.webp); ">
+                <h2 style="padding-top: 80%;">Accelerate </h2>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <h1 class="text-center">About Us</h1>
+    <div class="row justify-content-center">
+        <h2 class="col-lg-6 col-md-8 col-sm-12 col-xs-12 text-center justify-content-center"
+            style="color: rgb(155, 161, 158);">A global leader in next-generation digital services and consulting
+        </h2>
+        <br>
+        <div class="my-4 row justify-content-center text-center">
+            <div class="col">
+                <h1>
+                    50+
+                </h1>
+                countries where we have trusting clients
+            </div>
+            <div class="col">
+                <h1>
+                    US$14.2
+                </h1>
+                billion total revenue (LTM)
+            </div>
+            <div class="col">
+                <h1>
+                    158,000+
+                </h1>
+                Agile enabled employees
+            </div>
+            <div class="col">
+                <h1>
+                    106,000
+                </h1>
+                employees trained in new skills
+
+            </div>
+
+        </div>
+    </div>
+    <h1 class="text-center mt-5">Investors</h1>
+    <div class="row justify-content-center">
+        <h2 class="col-lg-6 col-md-8 col-sm-12 col-xs-12 text-center justify-content-center"
+            style="color: rgb(155, 161, 158);">
+            Maximizing shareholder value with good corporate governance
+        </h2>
+    </div>
+
+    <div class="container mt-5" style="width:50vw; margin-left: 0; padding-left:10%; position: relative;">
+        <!-- <div class="annual-report" style="background-image: url(./images/annual-report-2021-mob.webp);">
+                <h2 style="padding-top: 80%;">Annual Report 2021</h2>
+            </div> -->
+        <img src="./images/annual-report-2021-mob.webp" alt=""
+            style="max-width: 100%; margin-left: 0; padding-left: 0;">
+        <h2 class="annual" style="padding-left: 22%; "> Annual report 2021</h2>
+    </div>
+    <h1 class="text-center mt-5">Careers</h1>
+    <div class="row justify-content-center">
+        <h2 class="col-lg-6 col-md-8 col-sm-12 col-xs-12 text-center justify-content-center"
+            style="color: rgb(155, 161, 158);">
+            Every Infoscion is the navigator of our clients’ digital transformation
+        </h2>
+    </div>
+
+    <div class="container mt-5" style=" margin-left: 0; padding-left:10%; position: relative;">
+        <!-- <div class="annual-report" style="background-image: url(./images/annual-report-2021-mob.webp);">
+                    <h2 style="padding-top: 80%;">Annual Report 2021</h2>
+                </div> -->
+        <img src="./images/careers-video-img.webp" alt="" style="max-width: 100%;">
+        <h2 class="annual" style="padding-left: 22%; "> Life at infosys</h2>
+
+
+    </div>
+
+    <div class="mt-5" style="height:60vh; width: 100vw; background-color: blueviolet;">
+        <div class="container m-3 p-1" style=" width:40%; height:100%;">
+            <div class="row" style="height:50%">
+                <div class="col col-6 text-center locations">
+                    <h2>
+                        America
+                    </h2>
+                </div>
+                <div class="col col-6 text-center locations">
+                    <h2>
+                        Asia Pacific
+                    </h2>
+                </div>
+            </div>
+            <div class="row" style="height:50%">
+                <div class="col col-6 text-center locations">
+                    <h2>
+                        Europe
+                    </h2>
+                </div>
+                <div class="col col-6 text-center locations">
+                    <h2>
+                        Middle East and Africa
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container border-top">
+        <footer class="py-5">
+            <div class="row">
+                <div class="col-2">
+                    <h5>Company</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Navigate your next
+                            </a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About Us</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Careers</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Corporate
+                                Responsibility</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Investors</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h5>Subsidiaries</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">EdgeVerve
+                                Systems</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys BPM</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys
+                                Consulting</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys Public
+                                Services</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Skava Systems</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-2">
+                    <h5>Programs</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys
+                                Foundation</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys Foundation
+                                USA</a>
+                        </li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys Science
+                                Foundation</a></li>
+                        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Infosys Leadership
+                                Institute</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-4 offset-1">
+                    <form>
+                        <h5>Subscribe to our newsletter</h5>
+                        <p>Monthly digest of whats new and exciting from us.</p>
+                        <div class="d-flex w-100 gap-2">
+                            <label for="newsletter1" class="visually-hidden">Email address</label>
+                            <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                            <button class="btn btn-primary" type="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between py-4 my-4 border-top">
+                <p>&copy; 2021 Company, Inc. All rights reserved.</p>
+                <ul class="list-unstyled d-flex">
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#twitter" />
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#instagram" />
+                            </svg></a></li>
+                    <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
+                                <use xlink:href="#facebook" />
+                            </svg></a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script src="" async defer></script>
+</body>
+
+</html>
