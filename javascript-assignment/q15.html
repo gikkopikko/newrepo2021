@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>q15</h2>
+    <p>Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13
+        return
+        double the absolute difference.</p>
+    <form>
+        Enter number <input type="text" id="number" /><br>
+
+        <input type="button" onClick="diff()" Value="Difference" />
+    </form>
+    <p>The Result :
+        <span id="result"></span>
+    </p>
+    <script>
+        function diff() {
+            const num = document.getElementById("number").value;
+            const result = (num <= 13) ? 13 - num : 2 * (num - 13);
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

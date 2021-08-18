@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>q3</h2>
+    <p>Write a JavaScript program to get the current date.
+        Expected Output :
+        mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let today = new Date();
+        let d = today.getDate();
+
+        let m = today.getMonth() + 1;
+        const y = today.getFullYear();
+        if (d < 10) {
+            d = `0${d}`;
+        }
+
+        if (m < 10) {
+            m = `0${m}`;
+        }
+        document.getElementById("demo").innerHTML = `${m}-${d}-${y}`;
+
+
+    </script>
+
+</body>
+
+</html>

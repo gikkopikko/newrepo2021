@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Number Methods</h2>
+
+    <p>The toString() method converts a number to a string.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let x = 123;
+        let y = 9.6566;
+        document.getElementById("demo").innerHTML =
+            "<p>The toString() method converts a number to a string.</p> <br>" + x.toString() + "<br>" +
+            "<p>An optional parameter defines the number of digits behind the decimal point.</p>" + y.toExponential(4) + "<br>" +
+            "<p>The toPrecision() method returns a string, with a number written with a specified length:</p>" + y.toPrecision(2) + "<br>" +
+            " <p>The Number() method converts variables to numbers:</p> <br>" + Number(true) + "<br>" +
+            Number(false) + "<br>" +
+            Number("10") + "<br>" +
+            Number("  10") + "<br>" +
+            Number("10  ") + "<br>" +
+            Number(" 10  ") + "<br>" +
+            Number("10.33") + "<br>" +
+            Number("10,33") + "<br>" +
+            Number("10 33") + "<br>" +
+            Number("John");
+
+    </script>
+
+</body>
+
+</html>

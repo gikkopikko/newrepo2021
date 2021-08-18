@@ -18,35 +18,97 @@
     <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-    <b>Note:</b>Form to b completed atleast 21 days prior to date.
+    <b>Note:</b>Form to be completed atleast 21 days prior to date.
     <form action="">
         <fieldset>
             <legend>Personal Details</legend>
             <label for="Name">Name:</label>
             <input type="text" name="Name" placeholder="Enter name here">
-
+            <br>
             <label for="Address">Address:</label>
             <input type="text" name="Address" placeholder="Enter address here">
-
+            <br>
             <label for="Email">Email:</label>
             <input type="email" name="Email" placeholder="Enter email here">
-
+            <br>
             <label for="Phone">Phone Number:</label>
             <input type="text" name="Phone" placeholder="Enter 10 digit number">
-
+            <br>
             <label for="Iq">Iq:</label>
             <input type="number" name="Iq" placeholder="Enter IQ here">
-
+            <br>
             <p>Gender</p>
             <label for="Female">Female</label> <input type="radio" name="Female">
+            <br>
             <label for="Male">Male</label> <input type="radio" name="Male">
+            <br>
             <label for="Other">Other</label> <input type="radio" name="Other">
-
+            <br>
             <label for="Outing">Date of proposed outing:</label>
             <input type="date" name="Outing" id="">
 
         </fieldset>
+
+
+        <!-- ------------------Checkboxes-------------------------------- -->
+        <fieldset>
+            <label for="Gender">Check All That Apply</label>
+            <p>
+                <input type="checkbox" name="tattoo" value="tattoo"> I have tattoos and/or piercings<br>
+                <input type="checkbox" name="age" value="Car"> I am more than 2 years older than my daughter<br>
+                <input type="checkbox" name="car" value="car"> I own a panel van or V8 ute<br>
+                <input type="checkbox" name="work" value="work" checked> I work full-time<br>
+                <input type="checkbox" name="rich" value="rich" checked> My parents are rich<br>
+                <input type="checkbox" name="loc" value="loc" checked> Is the date at a well lit public location<br>
+            </p>
+        </fieldset>
+
+        <!-- -----------------Dropdown menus--------------------------------- -->
+
+        <fieldset>
+            <div>
+                <label for="politics">Political Persuasion:</label>
+                <select id="dropdown">
+                    <option value="left">Left Wing</option>
+                    <option value="right">Right Wing</option>
+                    <option value="conservative">Conservative</option>
+                    <option value="nazi">Nazi</option>
+                </select>
+
+                <label for="politics">Education Level Completed:</label>
+                <select id="dropdown2">
+                    <option value="University">University</option>
+                    <option value="College">College</option>
+                    <option value="Secondary">High School</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- --------------------Text Areas------------------------------ -->
+
+        <fieldset>
+            <legend>Essay Section</legend>
+            <div>
+                <label for="msg"></label>
+                <p> In 50 words or more explain why you want to date my daughter</p>
+                <textarea id="msg" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea>
+            </div>
+            <div>
+                <label for="msg">Please upload contact details for 2 references</label><br>
+                <textarea id="msg2" name="user_message" rows="4" cols="50" placeholder="Enter Text Here"></textarea>
+            </div>
+            <p>Upload Police Clearance Certificate, Bank Statement and Medical Certifiates here:
+                <button>Attach Files</button>
+            </p>
+        </fieldset>
+
+
+        <button type="submit" id="submit">Send your application</button>
+
+
     </form>
+
 
     <script src="" async defer></script>
 </body>

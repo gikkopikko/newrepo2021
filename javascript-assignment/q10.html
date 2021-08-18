@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>q10</h2>
+    <p>Write a JavaScript program to calculate days left until next Christmas.</p>
+    <form>
+        1st Number : <input type="text" id="firstNumber" /><br>
+        2nd Number: <input type="text" id="secondNumber" /><br>
+        <input type="button" onClick="multiply()" Value="Multiply" />
+        <input type="button" onClick="divide()" Value="Divide" />
+    </form>
+    <p>The Result : <br>
+        <span id="result"></span>
+    </p>
+    <script>
+        function multiply() {
+            const num1 = document.getElementById("firstNumber").value;
+            const num2 = document.getElementById("secondNumber").value;
+            document.getElementById("result").innerHTML = `Result of multiplication ${num1 * num2}`;
+        }
+
+        function divide() {
+            const num1 = document.getElementById("firstNumber").value;
+            const num2 = document.getElementById("secondNumber").value;
+            document.getElementById("result").innerHTML = `Result of multiplication ${num1 / num2}`;
+        }
+    </script>
+
+</body>
+
+</html>

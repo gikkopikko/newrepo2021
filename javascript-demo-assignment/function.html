@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function concatenate(...args) {
+            return args.join(' ');
+        }
+        function secondFunction() {
+            var result;
+            result = concatenate('siddharth', 'garg', '1100', 'aaaaaaa');
+            document.write(result);
+        }
+    </script>
+</head>
+
+<body>
+    <p>Click the following button to call the function</p>
+    <form>
+        <input type="button" onclick="secondFunction()" value="Call Function">
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>q21</h2>
+    <p>Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string
+        begins
+        with "Py" then return the original string.
+    </p>
+    <form>
+        Enter string <input type="text" id="str" /><br>
+        Enter position <input type="text" id="char_pos" /><br>
+
+        <input type="button" onClick="rem()" Value="Remove char" />
+    </form>
+    <p>The Result :
+        <span id="result"></span>
+    </p>
+    <script>
+        function rem() {
+            const str = document.getElementById("str").value;
+            const char_pos = parseInt(document.getElementById("char_pos").value);
+            part1 = str.substring(0, char_pos);
+            part2 = str.substring(char_pos + 1);
+            const result = part1 + part2;
+            document.getElementById("result").innerHTML = result;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
