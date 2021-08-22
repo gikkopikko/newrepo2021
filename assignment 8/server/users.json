@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "first_name": "fdafassad",
+      "last_name": "13",
+      "email": "aaaaa",
+      "phone": "9557077006"
+    },
+    {
+      "id": "2",
+      "first_name": "fdafassad",
+      "last_name": "13",
+      "email": "aaaaa",
+      "phone": "9557077006"
+    },
+    {
+      "id": "3",
+      "first_name": "fdafassad",
+      "last_name": "13",
+      "email": "aaaaa",
+      "phone": "9557077006"
+    },
+    {
+      "id": "5",
+      "first_name": "sidd",
+      "last_name": "garg",
+      "email": "4ssiddharth@gmail.com",
+      "phone": "9557077006"
+    }
+  ]
+}

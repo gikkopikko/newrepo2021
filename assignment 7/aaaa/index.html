@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>REST API Assignment</title>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+</head>
+
+<body>
+	<section class="hero has-text-centered">
+		<div class="hero-body">
+			<div id="main" class="container">
+				<h1 class="text-center">
+					CRUD OPERATIONS WITH REST APIs
+				</h1>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- 
+	<div class="tabs is-centered" id="ops">
+		<ul>
+			<li class="is-active"><a>Create</a></li>
+			<li><a>Retrieve</a></li>
+			<li><a>Update</a></li>
+			<li><a>Delete</a></li>
+		</ul>
+	</div> -->
+
+	<nav>
+		<div class="nav nav-tabs" id="nav-tab" role="tablist">
+			<button class="nav-link active" id="nav-create-tab" data-bs-toggle="tab" data-bs-target="#nav-create"
+				type="button" role="tab" aria-controls="nav-create" aria-selected="true">Create</button>
+			<button class="nav-link" id="nav-retrieve-tab" data-bs-toggle="tab" data-bs-target="#nav-retrieve"
+				type="button" role="tab" aria-controls="nav-retrieve" aria-selected="false">Retrieve</button>
+			<button class="nav-link" id="nav-update-tab" data-bs-toggle="tab" data-bs-target="#nav-update" type="button"
+				role="tab" aria-controls="nav-update" aria-selected="false">Update</button>
+			<button class="nav-link" id="nav-delete-tab" data-bs-toggle="tab" data-bs-target="#nav-delete" type="button"
+				role="tab" aria-controls="nav-delete" aria-selected="false">Delete</button>
+		</div>
+	</nav>
+
+	<div class="tab-content" id="nav-tabContent">
+		<div class="tab-pane fade show active" id="nav-create" role="tabpanel" aria-labelledby="nav-create-tab">
+			<div class="container" id="create">
+				<div class="field">
+					<label class="label">ID No.:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter ID" id="createID">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Student Name:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter name" id="createName">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">Grade:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter grade" id="createHOD">
+					</div>
+				</div>
+				<div class="field has-text-centered">
+					<div class="control">
+						<button class="button is-link" id="createBtn">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="tab-pane fade" id="nav-retrieve" role="tabpanel" aria-labelledby="nav-retrieve-tab">
+			<div class="container" id="retrieve">
+				<div class="field">
+					<label class="label">Retrieve by ID:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter ID" id="retrieveID">
+					</div>
+				</div>
+				<div class="field has-text-centered">
+					<div class="control">
+						<button class="button is-link" id="retrieveBtn">Search</button>
+					</div>
+				</div>
+				<h3 class="title has-text-centered is-4">OR</h3>
+				<div class="field has-text-centered">
+					<div class="control">
+						<button class="button is-link" id="retrieveAll">Retrieve All</button>
+					</div>
+				</div>
+				<div class="container has-text-centered is-rounded" id="results">
+
+				</div>
+				<table class="table">
+					<thead>
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">name</th>
+							<th scope="col">grade</th>
+
+						</tr>
+					</thead>
+					<tbody id="result-table">
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="tab-pane fade " id="nav-update" role="tabpanel" aria-labelledby="nav-update-tab">
+			<div class="container" id="update">
+				<div class="field">
+					<label class="label">ID to be updated:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter ID" id="updateID">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">New Student Name:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter name" id="updateName">
+					</div>
+				</div>
+				<div class="field">
+					<label class="label">New Grade:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter grade" id="updateHOD">
+					</div>
+				</div>
+				<div class="field has-text-centered">
+					<div class="control">
+						<button class="button is-link" id="updateBtn">Update</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="tab-pane fade" id="nav-delete" role="tabpanel" aria-labelledby="nav-delete-tab">
+			<div class="container" id="deletion">
+				<div class="field">
+					<label class="label">Delete by ID:</label>
+					<div class="control">
+						<input class="input is-rounded" type="text" placeholder="Enter ID" id="deleteID">
+					</div>
+				</div>
+				<div class="field has-text-centered">
+					<div class="control">
+						<button class="button is-link" id="deleteBtn">Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+</body>
+
+</html>
